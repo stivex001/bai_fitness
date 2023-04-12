@@ -2,7 +2,7 @@ import Todos from "./components/Todos";
 
 function App() {
   return <div>
-    <Todos />
+    <Todos items={['learn typescript', 'learn Nextjs', 'learn DSA',]} />
   </div>;
 }
 
