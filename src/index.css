@@ -8,6 +8,8 @@
 html,
 body,
 #root,
-* {
+*.app{
     font-family: 'DM Sans', sans-serif;
+    height: 100%;
+    width: 100%;
 }

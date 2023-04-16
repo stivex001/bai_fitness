@@ -1,8 +1,9 @@
-import Todos from "./components/Todos";
+import Navbar from "./assets/scenes/navbar/Navbar";
+
 
 function App() {
-  return <div>
-    <Todos items={['learn typescript', 'learn Nextjs', 'learn DSA',]} />
+  return <div className=" bg-[#1e1e1e]">
+    <Navbar />
   </div>;
 }
 
