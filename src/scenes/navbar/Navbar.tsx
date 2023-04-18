@@ -1,8 +1,12 @@
 import React from 'react'
+import Links from './Links'
 
-type Props = {}
+type Props = {
+  selectedPage: string;
+  setSelectPage: (value: string) => void;
+}
 
-const Navbar = (props: Props) => {
+const Navbar = ({selectedPage, setSelectPage}: Props) => {
   const flexBetween = "flex items-center justify-between"
   return (
     <nav>
@@ -16,10 +20,22 @@ const Navbar = (props: Props) => {
         {/* Right */}
         <div className={`${flexBetween} gap-16 w-full`}>
           <div className={`${flexBetween} gap-8`}>
-            <p>Home</p>
-            <p>Benefits</p>
-            <p>Our Classes</p>
-            <p>Contact Us</p>
+            <Links 
+              page="Home"
+              selectedPage={selectedPage}
+              setSelectPage={setSelectPage} />
+            <Links 
+              page="Benefits"
+              selectedPage={selectedPage}
+              setSelectPage={setSelectPage} />
+            <Links 
+              page="Our Classes"
+              selectedPage={selectedPage}
+              setSelectPage={setSelectPage} />
+            <Links 
+              page="Contact Us"
+              selectedPage={selectedPage}
+              setSelectPage={setSelectPage} />
           </div>
           <div className={`${flexBetween} gap-8`}>
             <p>Sign In</p>
