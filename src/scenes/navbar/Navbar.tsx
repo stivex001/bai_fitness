@@ -7,7 +7,7 @@ const Navbar = (props: Props) => {
   return (
     <nav>
       <div className={`${flexBetween} py-6 fixed top-0 z-30 w-full bg-[#1e1e1e] `}>
-        <div className={`${flexBetween} w-5/6 mx-auto `}>
+        <div className={`${flexBetween} w-5/6 mx-auto text-white `}>
           
         {/* Logo */}
         <div className='w-full'>
