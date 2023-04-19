@@ -3,6 +3,7 @@ import Links from "./Links";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import MenuIcon from "@mui/icons-material/Menu";
+import ActionButton from "@/shared/ActionButton";
 
 type Props = {
   selectedPage: SelectedPage;
@@ -19,14 +20,14 @@ const Navbar = ({ selectedPage, setSelectPage }: Props) => {
       <div
         className={`${flexBetween} py-6 fixed top-0 z-30 w-full bg-[#1e1e1e] `}
       >
-        <div className={`${flexBetween} w-5/6 mx-auto text-white `}>
+        <div className={`${flexBetween} w-5/6 mx-auto text-white  gap-16`}>
           {/* Logo */}
-          <div className="w-full">
+          <div className="  text-orange-500">
             <p>WORKOUT</p>
           </div>
           {/* Right */}
           {isAboveMediumScreens ? (
-            <div className={`${flexBetween} gap-16 w-full`}>
+            <div className={`${flexBetween} gap-16`}>
               <div className={`${flexBetween} gap-8`}>
                 <Links
                   page="Home"
@@ -51,12 +52,14 @@ const Navbar = ({ selectedPage, setSelectPage }: Props) => {
               </div>
               <div className={`${flexBetween} gap-8`}>
                 <p>Sign In</p>
-                <button>Become a Member</button>
+                <ActionButton setSelectedPage={setSelectPage}>
+                  Become a Member
+                </ActionButton>
               </div>
             </div>
           ) : (
             <button
-              className="rounded-full bg-orange p-2"
+              className="rounded-full p-2 bg-orange-500"
               onClick={() => setIsMenuToggled(!isMenuToggled)}
             >
               <MenuIcon />
