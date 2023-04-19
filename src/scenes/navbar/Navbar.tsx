@@ -1,9 +1,10 @@
 import React from 'react'
 import Links from './Links'
+import { SelectedPage } from '@/shared/types';
 
 type Props = {
-  selectedPage: string;
-  setSelectPage: (value: string) => void;
+  selectedPage: SelectedPage;
+  setSelectPage: (value: SelectedPage) => void;
 }
 
 const Navbar = ({selectedPage, setSelectPage}: Props) => {
