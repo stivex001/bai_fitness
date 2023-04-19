@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Links from "./Links";
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import MenuIcon from "@mui/icons-material/Menu";
 
 type Props = {
   selectedPage: SelectedPage;
@@ -11,6 +12,7 @@ type Props = {
 const Navbar = ({ selectedPage, setSelectPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const [isMenuToggled, setIsMenuToggled] = useState<Boolean>(false);
 
   return (
     <nav>
@@ -53,7 +55,12 @@ const Navbar = ({ selectedPage, setSelectPage }: Props) => {
               </div>
             </div>
           ) : (
-            <div>ygydgygydgyu </div>
+            <button
+              className="rounded-full bg-orange p-2"
+              onClick={() => setIsMenuToggled(!isMenuToggled)}
+            >
+              <MenuIcon />
+            </button>
           )}
         </div>
       </div>
