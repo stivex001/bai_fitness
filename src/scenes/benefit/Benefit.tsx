@@ -43,7 +43,7 @@ const Benefit = ({ setSelectPage }: Props) => {
           </p>
         </div>
         {/* Benefits */}
-        <div className="md:flex items-center justify-between gap-8 mt-5">
+        <div className="lg:flex items-center justify-between gap-8 mt-5">
           {benefits.map((benefit) => (
             <Benefitts
               key={benefit.title}
