@@ -7,6 +7,7 @@ import huff from "../../assets/layer1.png";
 import ActionButton from "@/shared/ActionButton";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { motion } from "framer-motion";
 
 type Props = {
   setSelectPage: (value: SelectedPage) => void;
@@ -18,8 +19,18 @@ const Home = ({ setSelectPage }: Props) => {
   return (
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
       <div className="md:flex items-center justify-center mx-auto w-5/6 md:h-5/6">
-        <div className="z-10 mt-36 basis-3/5">
-          <div className="-mt-20">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+          className="z-10 mt-36 basis-3/5"
+        >
+          <div className="md:-mt-20">
             <h1 className="text-white font-bold text-7xl">WORKOUT WITH ME</h1>
             <p className="text-sm font-normal text-gray-400 ">
               A huge selection of health and fitness content, healthy recipes
@@ -38,7 +49,7 @@ const Home = ({ setSelectPage }: Props) => {
               <p>Learn More</p>
             </AnchorLink>
           </div>
-        </div>
+        </motion.div>
 
         <div className="flex basis-3/5 justify-center mt-20 md:ml-10 md:justify-items-end ">
           <img src={workout} alt="WorkOut" />
@@ -47,9 +58,11 @@ const Home = ({ setSelectPage }: Props) => {
       {/* SPONSORS */}
       {isAboveMediumScreens && (
         <div className="h-[150px] w-full py-10">
-          <div>
-            <p className="text-sm font-semibold text-gray-300">AS FEATURED IN</p>
-            <div>
+          <div className="mx-auto w-5/6">
+            <p className="text-sm font-semibold text-gray-300">
+              AS FEATURED IN
+            </p>
+            <div className="flex w-3/5 items-center justify-between mt-8 gap-8">
               <img src={nike} alt="nike" />
               <img src={buzz} alt="buzz" />
               <img src={sprit} alt="sprit" />
