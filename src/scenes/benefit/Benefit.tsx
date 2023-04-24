@@ -1,3 +1,4 @@
+import Htext from "@/shared/Htext";
 import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 
@@ -10,9 +11,11 @@ const Benefit = ({ setSelectPage }: Props) => {
     <section id="benefits" className="mx-auto min-h-full w-5/6 py-20">
       <motion.div onViewportEnter={() => setSelectPage(SelectedPage.Benefits)}>
         <div>
-          <h1 className="basis-3/5 text-4xl font-semibold text-white">
-            Not sure where to start?
-          </h1>
+          <Htext>Not sure where to start?</Htext>
+          <p className="my-5 text-sm font-normal text-gray-300">
+            Programs offer day-to-day guidance on an interactive calendar to
+            keep you on track.
+          </p>
         </div>
         <div></div>
       </motion.div>
