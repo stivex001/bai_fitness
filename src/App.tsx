@@ -16,14 +16,18 @@ function App() {
       } else {
         setIsTopOfPage(false);
       }
-      window.addEventListener("scroll", handleScroll)
-      return () => window.removeEventListener("scroll", handleScroll)
     };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div className=" bg-[#1e1e1e]">
-      <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectPage={setSelectPage} />
+      <Navbar
+        isTopOfPage={isTopOfPage}
+        selectedPage={selectedPage}
+        setSelectPage={setSelectPage}
+      />
     </div>
   );
 }
