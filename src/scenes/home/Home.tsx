@@ -17,16 +17,16 @@ const Home = ({ setSelectPage }: Props) => {
 
   return (
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
-      <div>
-        <div>
-          <div>
-            <h1 className="text-white font-bold text-9xl">WORKOUT WITH ME</h1>
-            <p>
+      <div className="md:flex items-center justify-center mx-auto w-5/6 md:h-5/6">
+        <div className="z-10 mt-36 basis-3/5">
+          <div className="-mt-20">
+            <h1 className="text-white font-bold text-7xl">WORKOUT WITH ME</h1>
+            <p className="text-sm font-normal text-gray-400">
               A huge selection of health and fitness content, healthy recipes
               and transformation stories to help you get fit and stay fit!
             </p>
           </div>
-          <div>
+          <div className="mt-8 flex items-center gap-8">
             <ActionButton setSelectedPage={setSelectPage}>
               Join Now
             </ActionButton>
@@ -40,7 +40,7 @@ const Home = ({ setSelectPage }: Props) => {
           </div>
         </div>
 
-        <div>
+        <div className="w-[200px] h-[200px]">
           <img src={workout} alt="WorkOut" />
         </div>
       </div>
