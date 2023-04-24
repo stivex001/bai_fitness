@@ -9,17 +9,19 @@ import CloseIcon from "@mui/icons-material/Close";
 type Props = {
   selectedPage: SelectedPage;
   setSelectPage: (value: SelectedPage) => void;
+  isTopOfPage: boolean;
 };
 
-const Navbar = ({ selectedPage, setSelectPage }: Props) => {
+const Navbar = ({ selectedPage, setSelectPage, isTopOfPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width: 1024px)");
   const [isMenuToggled, setIsMenuToggled] = useState<Boolean>(false);
+  const navbarBg = isTopOfPage ? "" : "bg-red-100 drop-shadow";
 
   return (
     <nav>
       <div
-        className={`${flexBetween} py-6 fixed top-0 z-30 w-full bg-[#1e1e1e] `}
+        className={`${navbarBg} ${flexBetween} py-6 fixed top-0 z-30 w-full bg-[#1e1e1e] `}
       >
         <div className={`${flexBetween} w-5/6 mx-auto text-white  gap-16`}>
           {/* Logo */}
