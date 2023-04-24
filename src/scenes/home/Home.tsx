@@ -21,7 +21,7 @@ const Home = ({ setSelectPage }: Props) => {
         <div className="z-10 mt-36 basis-3/5">
           <div className="-mt-20">
             <h1 className="text-white font-bold text-7xl">WORKOUT WITH ME</h1>
-            <p className="text-sm font-normal text-gray-400">
+            <p className="text-sm font-normal text-gray-400 ">
               A huge selection of health and fitness content, healthy recipes
               and transformation stories to help you get fit and stay fit!
             </p>
@@ -40,15 +40,15 @@ const Home = ({ setSelectPage }: Props) => {
           </div>
         </div>
 
-        <div className="w-[200px] h-[200px]">
+        <div className="flex basis-3/5 justify-center mt-20 md:ml-10 md:justify-items-end ">
           <img src={workout} alt="WorkOut" />
         </div>
       </div>
       {/* SPONSORS */}
       {isAboveMediumScreens && (
-        <div>
+        <div className="h-[150px] w-full py-10">
           <div>
-            <p>AS FEATURED IN</p>
+            <p className="text-sm font-semibold text-gray-300">AS FEATURED IN</p>
             <div>
               <img src={nike} alt="nike" />
               <img src={buzz} alt="buzz" />
