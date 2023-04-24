@@ -18,26 +18,39 @@ const Home = ({ setSelectPage }: Props) => {
 
   return (
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
-      <div className="md:flex items-center justify-center mx-auto w-5/6 md:h-5/6">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-          className="z-10 mt-36 basis-3/5"
-        >
-          <div className="md:-mt-20">
+      <motion.div
+        onViewportEnter={() => setSelectPage(SelectedPage.Home)}
+        className="md:flex items-center justify-center mx-auto w-5/6 md:h-5/6"
+      >
+        <div className="z-10 mt-36 basis-3/5">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            className="md:-mt-20"
+          >
             <h1 className="text-white font-bold text-7xl">WORKOUT WITH ME</h1>
             <p className="text-sm font-normal text-gray-400 ">
               A huge selection of health and fitness content, healthy recipes
               and transformation stories to help you get fit and stay fit!
             </p>
-          </div>
-          <div className="mt-8 flex items-center gap-8">
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            className="mt-8 flex items-center gap-8"
+          >
             <ActionButton setSelectedPage={setSelectPage}>
               Join Now
             </ActionButton>
@@ -48,13 +61,13 @@ const Home = ({ setSelectPage }: Props) => {
             >
               <p>Learn More</p>
             </AnchorLink>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         <div className="flex basis-3/5 justify-center mt-20 md:ml-10 md:justify-items-end ">
           <img src={workout} alt="WorkOut" />
         </div>
-      </div>
+      </motion.div>
       {/* SPONSORS */}
       {isAboveMediumScreens && (
         <div className="h-[150px] w-full py-10">
