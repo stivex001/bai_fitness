@@ -34,6 +34,19 @@ const benefits: Array<Benefits> = [
   },
 ];
 
+const card = [
+  {
+    title: "Work out at home for free.",
+    desc: "We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free!",
+    src: yoga,
+  },
+  {
+    title: "Get more with low-cost training programs and advanced features.",
+    desc: "We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free!",
+    src: Exercise,
+  },
+];
+
 const container = {
   hidden: {},
   visible: {
@@ -80,24 +93,19 @@ const Benefit = ({ setSelectPage }: Props) => {
         </motion.div>
 
         {/* GRAPHICS AND DESCRIPTION */}
-        <div className="my-20">
+        <div className="my-20 lg:my-40">
           <div className="flex flex-col gap-36">
-            <Card
-              title="Work out at home for free."
-              desc="We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free!"
-              src={yoga}
-              setSelectPage={function (value: SelectedPage): void {
-                throw new Error("Function not implemented.");
-              }}
-            />
-            <Card
-              title="Get more with low-cost training programs and advanced features."
-              desc="We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free!"
-              src={Exercise}
-              setSelectPage={function (value: SelectedPage): void {
-                throw new Error("Function not implemented.");
-              }}
-            />
+            {card.map((c, index) => (
+              <Card
+                key={index}
+                index={index}
+                {...c}
+                setSelectPage={function (value: SelectedPage): void {
+                  throw new Error("Function not implemented.");
+                }}
+              />
+            ))}
+
             <div></div>
           </div>
         </div>

@@ -8,11 +8,15 @@ type Props = {
   title: string;
   desc: string;
   src: string;
+  index: number;
+
 };
 
-const Card = ({ setSelectPage, title, desc, src }: Props) => {
+const Card = ({ setSelectPage, title, desc, src, index }: Props) => {
+    const isEven = index % 2 === 0;
+
   return (
-    <div className="lg:flex items-center gap-8 ">
+    <div className={`lg:flex items-center gap-8 ${isEven ? "" : "flex-row-reverse"}`}>
       <div className="basis-3/5 mb-8">
         <Htext>{title}</Htext>
         <p className="my-5 text-sm font-normal text-gray-300">{desc}</p>
