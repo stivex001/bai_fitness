@@ -3,8 +3,9 @@ import Htext from "@/shared/Htext";
 import { Benefits, SelectedPage } from "@/shared/types";
 import { ArrowRight } from "@mui/icons-material";
 import { motion } from "framer-motion";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import yoga from "../../assets/Mask Group.png";
+import Exercise from "../../assets/Mask Group (1).png";
+import Card from "@/shared/Card";
 
 type Props = {
   setSelectPage: (value: SelectedPage) => void;
@@ -79,31 +80,24 @@ const Benefit = ({ setSelectPage }: Props) => {
         </motion.div>
 
         {/* GRAPHICS AND DESCRIPTION */}
-        <div className="my-10">
-          <div>
-            <div>
-              <div>
-                <Htext>Work out at home for free.</Htext>
-                <p className="my-5 text-sm font-normal text-gray-300">
-                  We believe fitness should be accessible to everyone,
-                  everywhere, regardless of income or access to a gym. With
-                  hundreds of professional workouts, healthy recipes and
-                  informative articles, as well as one of the most positive
-                  communities on the web, you’ll have everything you need to
-                  reach your personal fitness goals – for free!
-                </p>
-                <AnchorLink
-                  className="text-sm font-bold text-red-500 underline hover:text-yellow-500"
-                  onClick={() => setSelectPage(SelectedPage.ContactUs)}
-                  href={`#${SelectedPage.ContactUs}`}
-                >
-                  <p>Learn More</p>
-                </AnchorLink>
-              </div>
-              <div>
-                <img src={yoga} alt="" />
-              </div>
-            </div>
+        <div className="my-20">
+          <div className="flex flex-col gap-36">
+            <Card
+              title="Work out at home for free."
+              desc="We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free!"
+              src={yoga}
+              setSelectPage={function (value: SelectedPage): void {
+                throw new Error("Function not implemented.");
+              }}
+            />
+            <Card
+              title="Get more with low-cost training programs and advanced features."
+              desc="We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free!"
+              src={Exercise}
+              setSelectPage={function (value: SelectedPage): void {
+                throw new Error("Function not implemented.");
+              }}
+            />
             <div></div>
           </div>
         </div>
