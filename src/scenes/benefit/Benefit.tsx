@@ -3,6 +3,8 @@ import Htext from "@/shared/Htext";
 import { Benefits, SelectedPage } from "@/shared/types";
 import { ArrowRight } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import yoga from "../../assets/Mask Group.png";
 
 type Props = {
   setSelectPage: (value: SelectedPage) => void;
@@ -46,7 +48,7 @@ const Benefit = ({ setSelectPage }: Props) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{  duration: 0.5 }}
+          transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
@@ -75,6 +77,36 @@ const Benefit = ({ setSelectPage }: Props) => {
             />
           ))}
         </motion.div>
+
+        {/* GRAPHICS AND DESCRIPTION */}
+        <div className="my-10">
+          <div>
+            <div>
+              <div>
+                <Htext>Work out at home for free.</Htext>
+                <p className="my-5 text-sm font-normal text-gray-300">
+                  We believe fitness should be accessible to everyone,
+                  everywhere, regardless of income or access to a gym. With
+                  hundreds of professional workouts, healthy recipes and
+                  informative articles, as well as one of the most positive
+                  communities on the web, you’ll have everything you need to
+                  reach your personal fitness goals – for free!
+                </p>
+                <AnchorLink
+                  className="text-sm font-bold text-red-500 underline hover:text-yellow-500"
+                  onClick={() => setSelectPage(SelectedPage.ContactUs)}
+                  href={`#${SelectedPage.ContactUs}`}
+                >
+                  <p>Learn More</p>
+                </AnchorLink>
+              </div>
+              <div>
+                <img src={yoga} alt="" />
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
       </motion.div>
     </section>
   );
