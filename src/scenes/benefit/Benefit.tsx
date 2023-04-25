@@ -94,7 +94,7 @@ const Benefit = ({ setSelectPage }: Props) => {
 
         {/* GRAPHICS AND DESCRIPTION */}
         <div className="my-20 lg:my-40">
-          <div className="flex flex-col gap-36">
+          <motion.div className="flex flex-col gap-36">
             {card.map((c, index) => (
               <Card
                 key={index}
@@ -105,9 +105,7 @@ const Benefit = ({ setSelectPage }: Props) => {
                 }}
               />
             ))}
-
-            <div></div>
-          </div>
+          </motion.div>
         </div>
       </motion.div>
     </section>
