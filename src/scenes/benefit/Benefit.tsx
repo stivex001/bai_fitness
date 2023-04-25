@@ -31,6 +31,13 @@ const benefits: Array<Benefits> = [
   },
 ];
 
+const container = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.2 },
+  },
+};
+
 const Benefit = ({ setSelectPage }: Props) => {
   return (
     <section id="benefits" className="mx-auto min-h-full w-5/6 py-20 my-10">
@@ -43,7 +50,13 @@ const Benefit = ({ setSelectPage }: Props) => {
           </p>
         </div>
         {/* Benefits */}
-        <div className="lg:flex items-center justify-between gap-8 mt-5">
+        <motion.div
+          className="lg:flex items-center justify-between gap-8 mt-5"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={container}
+        >
           {benefits.map((benefit) => (
             <Benefitts
               key={benefit.title}
@@ -52,7 +65,7 @@ const Benefit = ({ setSelectPage }: Props) => {
               setSelectedPage={setSelectPage}
             />
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
