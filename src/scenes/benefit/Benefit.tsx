@@ -42,13 +42,22 @@ const Benefit = ({ setSelectPage }: Props) => {
   return (
     <section id="benefits" className="mx-auto min-h-full w-5/6 py-20 my-10">
       <motion.div onViewportEnter={() => setSelectPage(SelectedPage.Benefits)}>
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{  duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+        >
           <Htext>Not sure where to start?</Htext>
           <p className="my-5 text-sm font-normal text-gray-300">
             Programs offer day-to-day guidance on an interactive calendar to
             keep you on track.
           </p>
-        </div>
+        </motion.div>
         {/* Benefits */}
         <motion.div
           className="lg:flex items-center justify-between gap-8 mt-5"
