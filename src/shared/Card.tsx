@@ -2,6 +2,7 @@ import React from "react";
 import Htext from "./Htext";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { SelectedPage } from "./types";
+import { motion } from "framer-motion";
 
 type Props = {
   setSelectPage: (value: SelectedPage) => void;
@@ -9,15 +10,28 @@ type Props = {
   desc: string;
   src: string;
   index: number;
-
 };
 
 const Card = ({ setSelectPage, title, desc, src, index }: Props) => {
-    const isEven = index % 2 === 0;
+  const isEven = index % 2 === 0;
 
   return (
-    <div className={`lg:flex items-center gap-8 ${isEven ? "" : "flex-row-reverse"}`}>
-      <div className="basis-3/5 mb-8">
+    <div
+      className={`lg:flex items-center gap-8 ${
+        isEven ? "" : "flex-row-reverse"
+      }`}
+    >
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, x: 50 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        className="basis-3/5 mb-8"
+      >
         <Htext>{title}</Htext>
         <p className="my-5 text-sm font-normal text-gray-300">{desc}</p>
         <AnchorLink
@@ -27,10 +41,19 @@ const Card = ({ setSelectPage, title, desc, src, index }: Props) => {
         >
           <p>Learn More</p>
         </AnchorLink>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 },
+        }}
+      >
         <img src={src} alt="" />
-      </div>
+      </motion.div>
     </div>
   );
 };
