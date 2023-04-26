@@ -1,4 +1,4 @@
-import { SelectedPage } from "@/shared/types";
+import { SelectedPage, classType } from "@/shared/types";
 import image1 from "../../assets/image1.png";
 import image2 from "../../assets/image2.png";
 import image3 from "../../assets/image3.png";
@@ -7,6 +7,40 @@ import image5 from "../../assets/image5.png";
 import image6 from "../../assets/image6.png";
 import { motion } from "framer-motion";
 import Htext from "@/shared/Htext";
+import Class from "./Class";
+
+const classes: Array<classType> = [
+  {
+    name: "Weight Training Classes",
+    desc: "These classes are designed to be suitable for people of all fitness levels and typically involve a combination of exercises such as squats, lunges, deadlifts, and bench presses. Instructors provide guidance on proper form and technique to ensure participants are performing exercises safely and effectively. Weight training classes can help individuals achieve their fitness goals, improve overall health, and boost confidence.",
+    image: image1,
+  },
+  {
+    name: "Yoga Classes",
+    desc: "These classes are designed to be suitable for people of all fitness levels and typically involve a combination of exercises such as squats, lunges, deadlifts, and bench presses. Instructors provide guidance on proper form and technique to ensure participants are performing exercises safely and effectively. Weight training classes can help individuals achieve their fitness goals, improve overall health, and boost confidence.",
+    image: image2,
+  },
+  {
+    name: "Ab Core Classes",
+    desc: "These classes are designed to be suitable for people of all fitness levels and typically involve a combination of exercises such as squats, lunges, deadlifts, and bench presses. Instructors provide guidance on proper form and technique to ensure participants are performing exercises safely and effectively. Weight training classes can help individuals achieve their fitness goals, improve overall health, and boost confidence.",
+    image: image3,
+  },
+  {
+    name: "Adventure Classes",
+    desc: "These classes are designed to be suitable for people of all fitness levels and typically involve a combination of exercises such as squats, lunges, deadlifts, and bench presses. Instructors provide guidance on proper form and technique to ensure participants are performing exercises safely and effectively. Weight training classes can help individuals achieve their fitness goals, improve overall health, and boost confidence.",
+    image: image4,
+  },
+  {
+    name: "Fitness Classes",
+    desc: "These classes are designed to be suitable for people of all fitness levels and typically involve a combination of exercises such as squats, lunges, deadlifts, and bench presses. Instructors provide guidance on proper form and technique to ensure participants are performing exercises safely and effectively. Weight training classes can help individuals achieve their fitness goals, improve overall health, and boost confidence.",
+    image: image5,
+  },
+  {
+    name: "Training Classes",
+    desc: "These classes are designed to be suitable for people of all fitness levels and typically involve a combination of exercises such as squats, lunges, deadlifts, and bench presses. Instructors provide guidance on proper form and technique to ensure participants are performing exercises safely and effectively. Weight training classes can help individuals achieve their fitness goals, improve overall health, and boost confidence.",
+    image: image6,
+  },
+];
 
 type Props = {
   setSelectPage: (value: SelectedPage) => void;
@@ -41,6 +75,18 @@ const Ourclasses = ({ setSelectPage }: Props) => {
             </p>
           </div>
         </motion.div>
+        <div className="mt-10 w-full h-[335px] overflow-x-auto overflow-y-hidden">
+          <ul className="w-[2800px] whitespace-nowrap">
+            {classes.map((item, index) => (
+              <Class
+                key={`${item.name}-${index}`}
+                name={item.name}
+                desc={item.desc}
+                image={item.image}
+              />
+            ))}
+          </ul>
+        </div>
       </motion.div>
     </section>
   );
