@@ -66,7 +66,7 @@ const ContactUs = ({ setSelectPage }: Props) => {
             <form
               target="__blank"
               onSubmit={onSubmit}
-              action="https://formsubmit.co/el/wedipi"
+              action="https://formsubmit.co/f9dfb9a1ac781037d53979a086961fed "
               method="POST"
             >
               <input
@@ -130,7 +130,7 @@ const ContactUs = ({ setSelectPage }: Props) => {
             </form>
           </motion.div>
 
-          <motion.div className="mt-16 "
+          <motion.div className="mt-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -139,7 +139,7 @@ const ContactUs = ({ setSelectPage }: Props) => {
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
             }}>
-            <img className="w-full" src={image5} alt="" />
+            <img className="w-full rounded-lg" src={image5} alt="" />
           </motion.div>
         </div>
       </motion.div>
