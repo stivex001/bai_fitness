@@ -75,7 +75,7 @@ const Ourclasses = ({ setSelectPage }: Props) => {
             </p>
           </div>
         </motion.div>
-        <div className="mt-10 w-full h-[335px] overflow-x-auto overflow-y-hidden">
+        <div className="mx-auto w-5/6 mt-10  h-[335px] overflow-x-auto overflow-y-hidden">
           <ul className="w-[2800px] whitespace-nowrap">
             {classes.map((item, index) => (
               <Class
