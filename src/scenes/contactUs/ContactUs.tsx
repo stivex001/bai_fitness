@@ -102,8 +102,9 @@ const ContactUs = ({ setSelectPage }: Props) => {
                 </p>
               )}
 
-              <input
-                type="text"
+              <textarea
+                rows={4}
+                cols={50}
                 className={inputStyles}
                 placeholder="MESSAGE"
                 {...register("message", {
@@ -123,8 +124,22 @@ const ContactUs = ({ setSelectPage }: Props) => {
               <button
                 type="submit"
                 className="mt-5 rounded-lg bg-yellow-500 px-20 py-3 transition duration-500 hover:text-white"
-              >SUBMIT</button>
+              >
+                SUBMIT
+              </button>
             </form>
+          </motion.div>
+
+          <motion.div className="mt-16 "
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}>
+            <img className="w-full" src={image5} alt="" />
           </motion.div>
         </div>
       </motion.div>
